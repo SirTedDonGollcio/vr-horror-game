@@ -402,5 +402,6 @@ FodyWeavers.xsd
 
 # UE4
 Intermediate/
+Saved/
 Content/MS_content/girl_sounds.wav
 Content/MS_content/Sounds/girl_sounds.uasset
