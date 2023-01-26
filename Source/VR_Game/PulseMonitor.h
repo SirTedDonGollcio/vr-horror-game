@@ -18,7 +18,7 @@ private:
 	int videoFrameRate = 10;
 	int bpmCalculationFrequency = 5;
 	int bpmBufferIndex = 0;
-	int bpmBufferSize = 10;
+	int bpmBufferSize = 100;
 	int realHeight;
 	int realWidth;
 	cv::Mat currentDetectionFrame;
