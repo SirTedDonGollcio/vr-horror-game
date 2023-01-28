@@ -10,6 +10,7 @@
 #include "GameFramework/Actor.h"
 #include "Runtime/Engine/Classes/Engine/Texture2D.h"
 #include "PulseMonitor.h"
+#include "CameraSimulator.h"
 #include "WebcamReader.generated.h"
 
 UCLASS(Blueprintable)
@@ -85,6 +86,7 @@ public:
 
 protected:
 	PulseMonitor pulseMonitor;
+	EventCamera eventCamera;
 
 	// Use this function to update the texture rects you want to change:
 	// NOTE: There is a method called UpdateTextureRegions in UTexture2D but it is compiled WITH_EDITOR and is not marked as ENGINE_API so it cannot be linked

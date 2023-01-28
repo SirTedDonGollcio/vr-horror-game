@@ -21,6 +21,8 @@ AWebcamReader::AWebcamReader()
 	stream = cv::VideoCapture();
 	frame = cv::Mat();
 	pulseMonitor = PulseMonitor(10, 320, 240);
+	eventCamera = EventCamera();
+
 }
 
 // Called when the game starts or when spawned
@@ -86,8 +88,9 @@ void AWebcamReader::UpdateFrame()
 void AWebcamReader::DoProcessing()
 {
 	// PULSE
-	pulseMonitor.GrabPulse(frame);
-	cv::resize(pulseMonitor.GetDetectionFrame(), frame, size);
+	cv::Mat reconstructionFrame = eventCamera.getDiff_andReconstruction(frame);
+	pulseMonitor.GrabPulse(reconstructionFrame);
+	cv::resize(pulseMonitor.GetDetectionFrame(), reconstructionFrame, size);
 }
 
 void AWebcamReader::UpdateTexture()
